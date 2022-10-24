@@ -21,17 +21,21 @@ void AArcanoid1GameModeBase::SpawnBrick()
 
 void AArcanoid1GameModeBase::Tick(float DeltaSeconds)
 {
+	//creacion de ladrillos en forma dinamica
 	UE_LOG(LogTemp, Warning, TEXT("Creando Ladrillo"));
 	float newX = rand() % 100 + 1;
 	float newZ = rand() % 100 + 1;
 	UWorld* const World = GetWorld();
 	World->SpawnActor<ABrick>(FVector(-130, 0,380), FRotator::ZeroRotator);
 
+
 	//insertar los ladrillos en la pila
-
-
+	//template <class T>
+	//Pila<T>::Insertar(T ABrick);
+	//Pila<T>::Insertar(T *ABrick);
 }
 
 AArcanoid1GameModeBase::AArcanoid1GameModeBase()
 {
 }
+

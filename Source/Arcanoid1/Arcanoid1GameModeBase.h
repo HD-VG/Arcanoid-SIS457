@@ -19,15 +19,15 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-
+	ABrick *Brick;
 	void SpawnBrick();
 
 	virtual void Tick(float DeltaSeconds) override;
 public:
 	AArcanoid1GameModeBase();
 
-	template<typename T>
-	T SpawnBrick();
+	template<typename T1>
+	T1 SpawnBrick();
 
 
 };
@@ -57,6 +57,7 @@ public:
 	T Sacar();
 	bool Vacia();
 	bool Llena();
+	int j();
 };
 
 template<class T>
@@ -102,4 +103,10 @@ bool Pila<T>::Llena() {
 		return true;
 	}
 
+}
+
+template<class T>
+inline int Pila<T>::j()
+{
+	return 0;
 }
