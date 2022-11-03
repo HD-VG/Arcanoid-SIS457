@@ -14,7 +14,11 @@ class ARCANOID1_API ASingleton : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ASingleton();
-
+private:
+private:
+	//clase paddle
+	/*UPROPERTY()
+		class APaddle* Paddle;*/
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

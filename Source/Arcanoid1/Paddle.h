@@ -14,6 +14,8 @@ class ARCANOID1_API APaddle : public APawn
 public:
 	// Sets default values for this pawn's properties
 	APaddle();
+	UPROPERTY()
+		APaddle* Instance;
 
 	virtual void MoveHorizontal(float AxisValue);
 
