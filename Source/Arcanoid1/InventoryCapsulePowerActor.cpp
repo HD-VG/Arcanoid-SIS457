@@ -3,3 +3,18 @@
 
 #include "InventoryCapsulePowerActor.h"
 
+AInventoryCapsulePowerActor::AInventoryCapsulePowerActor()
+{
+	CategoryCapsule = "Power";
+	PrimaryActorTick.bCanEverTick = true;
+
+	auto MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/BasicShapes/Cone.Cone'"));
+	if (MeshAsset.Object != nullptr)
+	{
+		GetStaticMeshComponent()->SetStaticMesh(MeshAsset.Object);
+		GetStaticMeshComponent()->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);
+
+	}
+	GetStaticMeshComponent()->SetMobility(EComponentMobility::Movable);
+	SetActorEnableCollision(true);
+}

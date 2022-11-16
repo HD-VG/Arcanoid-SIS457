@@ -53,7 +53,7 @@ void APaddlePlayerController::SpawnNewBall()
 	}
 
 	if (BallObj) {
-		//MyBall = GetWorld()->SpawnActor<ABall>(BallObj, SpawnLocation, SpawnRotation, SpawnInfo);
+		MyBall = GetWorld()->SpawnActor<ABall>(BallObj, SpawnLocation, SpawnRotator, SpawnInfo);
 	}
 
 }

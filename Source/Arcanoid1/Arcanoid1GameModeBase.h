@@ -4,6 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "FactoryMethod.h"
+#include "InventoryCapsuleActor.h"
+#include "InventoryCapsuleDamageActor.h"
+#include "InventoryCapsulePowerActor.h"
 #include "Arcanoid1GameModeBase.generated.h"
 
 /**
@@ -21,9 +25,23 @@ protected:
 public:
 //	ABrick *Brick;
 	void SpawnBrick();
+	
+//	AInventoryCapsuleActor* CapsuleActor;
+	//void CreatorInventoryCapsuleActor(FString CategoryCapsule);
 private:
+
+	////The Builder Actor
+	//UPROPERTY(VisibleAnywhere, Category = "Main")
+	//	class AHotelLodgingBuilder* HotelBuilder;
+	////The Engineer Actor
+	//UPROPERTY(VisibleAnywhere, Category = "Main")
+	//	class AArchitecturalEngineer* Engineer;
+
 	UPROPERTY()
 		class APaddle* Paddle;
+	UPROPERTY()
+		class AFactoryMethod* FactoryMethod;
+
 	virtual void Tick(float DeltaSeconds) override;
 public:
 	AArcanoid1GameModeBase();

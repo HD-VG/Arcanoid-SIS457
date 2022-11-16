@@ -13,5 +13,7 @@ UCLASS()
 class ARCANOID1_API AInventoryCapsuleDamageActor : public AInventoryCapsuleActor
 {
 	GENERATED_BODY()
-	
+
+public:
+	AInventoryCapsuleDamageActor();
 };

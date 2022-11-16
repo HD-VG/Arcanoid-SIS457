@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "InventoryCapsuleActor.h"
 #include "InventoryCapsuleComponent.generated.h"
 
 
@@ -23,6 +24,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UPROPERTY()
+		TArray<AInventoryCapsuleActor*> CurrentInventory;
 
+	UFUNCTION()
+		int32 AddToInventory(AInventoryCapsuleActor* ActorToAdd);
+
+	UFUNCTION()
+		void RemoveFromInventory(AInventoryCapsuleActor* ActorToRemove);
 		
 };

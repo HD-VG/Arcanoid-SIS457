@@ -14,7 +14,8 @@ class ARCANOID1_API ACapsula : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ACapsula();
-
+	UPROPERTY(Category = Mesh, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+		class UStaticMeshComponent* SM_Capsula;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

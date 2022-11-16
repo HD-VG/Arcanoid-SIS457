@@ -13,5 +13,6 @@ UCLASS()
 class ARCANOID1_API AInventoryCapsulePowerActor : public AInventoryCapsuleActor
 {
 	GENERATED_BODY()
-	
+public:
+	AInventoryCapsulePowerActor();
 };
