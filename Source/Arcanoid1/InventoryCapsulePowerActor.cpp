@@ -17,4 +17,11 @@ AInventoryCapsulePowerActor::AInventoryCapsulePowerActor()
 	}
 	GetStaticMeshComponent()->SetMobility(EComponentMobility::Movable);
 	SetActorEnableCollision(true);
+	if (!MyCapsulePower) {
+		MyCapsulePower = nullptr;
+	}
+
+	if (CapsulePowerObj) {
+		MyCapsulePower = GetWorld()->SpawnActor<AInventoryCapsulePowerActor>(CapsulePowerObj, SpawnLocationCapsulePower, SpawnRotatorCapsulePower, SpawnInfoCapsulePower);
+	}
 }

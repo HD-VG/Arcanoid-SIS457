@@ -28,8 +28,7 @@ APaddle::APaddle()
 	{
 		//If exist at least one of them, set the instance with the first found one
 		Instance = Cast<APaddle>(Instances[0]);
-		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,
-			FString::Printf(TEXT("%s already exists"), *Instance->GetName()));
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,FString::Printf(TEXT("%s already exists"), *Instance->GetName()));
 		//Then Destroy this Actor
 		Destroy();
 	}

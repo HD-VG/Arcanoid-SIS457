@@ -28,6 +28,8 @@ private:
 	UPROPERTY()
 		class AInventoryCapsulePowerActor* InventoryCapsulePower;
 public:	
+	void SpawnNewCapsuleDamage();
+	void SpawnNewCapsulePower();
 	/*AInventoryCapsuleDamageActor* InventoryCapsuleDamage;
 	AInventoryCapsulePowerActor* InventoryCapsulePower;*/
 	// Called every frame

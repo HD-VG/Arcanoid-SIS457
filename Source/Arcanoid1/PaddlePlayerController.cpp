@@ -2,7 +2,8 @@
 
 
 #include "PaddlePlayerController.h"
-
+#include "InventoryCapsuleDamageActor.h"
+#include "InventoryCapsulePowerActor.h"
 #include"Ball.h"
 
 APaddlePlayerController::APaddlePlayerController()
@@ -17,7 +18,7 @@ void APaddlePlayerController::SetupInputComponent()
 	EnableInput(this);
 
 	InputComponent->BindAxis("MoveHorizontal", this, &APaddlePlayerController::MoveHorizontal);
-	InputComponent->BindAction("Lanch", IE_Pressed, this, &APaddlePlayerController::Lanch);
+	InputComponent->BindAction("Launch", IE_Pressed, this, &APaddlePlayerController::Launch);
 }
 
 void APaddlePlayerController::BeginPlay()
@@ -41,9 +42,9 @@ void APaddlePlayerController::MoveHorizontal(float AxisValue)
 
 }
 
-void APaddlePlayerController::Lanch()
+void APaddlePlayerController::Launch()
 {
-	MyBall->Lauch();
+	MyBall->Launch();
 }
 
 void APaddlePlayerController::SpawnNewBall()
@@ -53,7 +54,17 @@ void APaddlePlayerController::SpawnNewBall()
 	}
 
 	if (BallObj) {
-		MyBall = GetWorld()->SpawnActor<ABall>(BallObj, SpawnLocation, SpawnRotator, SpawnInfo);
+		MyBall = GetWorld()->SpawnActor<ABall>(BallObj, SpawnLocationBall, SpawnRotatorBall, SpawnInfoBall);
 	}
 
 }
+
+//void APaddlePlayerController::SpawnNewCapsuleDamage()
+//{
+//	
+//}
+//
+//void APaddlePlayerController::SpawnNewCApsulePower()
+//{
+//	
+//}

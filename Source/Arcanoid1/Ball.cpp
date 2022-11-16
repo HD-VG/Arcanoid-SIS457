@@ -29,7 +29,7 @@ ABall::ABall()
 
 }
 
-void ABall::Lauch()
+void ABall::Launch()
 {
 	if (!BallLaunched) {
 		SM_Ball->AddImpulse(FVector(140.0f, 0.0f, 130.0f), FName(), true);

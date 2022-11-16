@@ -13,6 +13,8 @@
  * 
  */
 class ABall;
+class AInventoryCapsuleDamageActor;
+class AInventoryCapsulePowerActor;
 UCLASS()
 class ARCANOID1_API APaddlePlayerController : public APlayerController
 {
@@ -25,15 +27,18 @@ class ARCANOID1_API APaddlePlayerController : public APlayerController
 protected:
 	virtual void BeginPlay() override;
 	void MoveHorizontal(float AxisValue);
-	void Lanch();
+	void Launch();
 
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<ABall> BallObj;
+	
 
 	ABall* MyBall;
-	FVector SpawnLocation = FVector(10.0f, 0.0f, 40.0f);
-	FRotator SpawnRotator = FRotator(0.0f, 0.0f, 0.0f);
-	FActorSpawnParameters SpawnInfo;
+	FVector SpawnLocationBall = FVector(10.0f, 0.0f, 40.0f);
+	FRotator SpawnRotatorBall = FRotator(0.0f, 0.0f, 0.0f);
+	FActorSpawnParameters SpawnInfoBall;
+
 public:
 	void SpawnNewBall();
+	
 };

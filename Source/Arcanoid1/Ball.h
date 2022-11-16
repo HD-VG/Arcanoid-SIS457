@@ -14,7 +14,7 @@ class ARCANOID1_API ABall : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ABall();
-	virtual void Lauch();
+	virtual void Launch();
 	bool BallLaunched;
 
 protected:

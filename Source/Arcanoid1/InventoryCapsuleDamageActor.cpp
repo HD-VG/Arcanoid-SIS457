@@ -17,4 +17,12 @@ AInventoryCapsuleDamageActor::AInventoryCapsuleDamageActor()
 	}
 	GetStaticMeshComponent()->SetMobility(EComponentMobility::Movable);
 	SetActorEnableCollision(true);
+
+	if (!MyCapsuleDamage) {
+		MyCapsuleDamage = nullptr;
+	}
+
+	if (CapsuleDamageObj) {
+		MyCapsuleDamage = GetWorld()->SpawnActor<AInventoryCapsuleDamageActor>(CapsuleDamageObj, SpawnLocationCapsuleDamage, SpawnRotatorCapsuleDamage, SpawnInfoCapsuleDamage);
+	}
 }

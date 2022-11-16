@@ -13,10 +13,40 @@ AFactoryMethod::AFactoryMethod()
 }
 void AFactoryMethod::BeginPlay()
 {
-	Super::BeginPlay();
+	Super::BeginPlay();//implemetar las condiciones para la creacion de capsulas
+	//AInventoryCapsuleDamageActor* NewInventoryCapsuleDamage = GetWorld()->SpawnActor<AInventoryCapsuleDamageActor>(AInventoryCapsuleDamageActor::StaticClass());
+	//AInventoryCapsulePowerActor* NewInventoryCapsulePower = GetWorld()->SpawnActor<AInventoryCapsulePowerActor>(AInventoryCapsulePowerActor::StaticClass());
+	CreatorCapsuleActor("Power");
+	CreatorCapsuleActor("Damage");
+	
+	
+}
+void AFactoryMethod::CreatorCapsuleActor(FString CategoryCapsule)
+{
+	/*if (Categorycapsule.equals("power") {
+		getworld()->spawnactor<ainventorycapsuleactor>(ainventorycapsuleactor::staticclass());
+		gengine->addonscreendebugmessage(-1, 15.f, fcolor::yellow, fstring::printf(text("creando capsule damage %s"), *inventorycapsuledamage->getname()));
+	}
+	if (Categorycapsule.equals("power")) {
+		getworld()->spawnactor<ainventorycapsuleactor>(ainventorycapsuleactor::staticclass());
+		gengine->addonscreendebugmessage(-1, 15.f, fcolor::yellow, fstring::printf(text("creando capsule damage %s"), *inventorycapsulepower->getname()));
+
+	}*/
+
+	if (CategoryCapsule.Equals("Damage")) {
+		SpawnNewCapsuleDamage();
+	}
+	if (CategoryCapsule.Equals("Power")) {
+		SpawnNewCapsulePower();
+	}
+}
+
+
+// Called when the game starts or when spawned
+
+void AFactoryMethod::SpawnNewCapsuleDamage()
+{
 	AInventoryCapsuleDamageActor* NewInventoryCapsuleDamage = GetWorld()->SpawnActor<AInventoryCapsuleDamageActor>(AInventoryCapsuleDamageActor::StaticClass());
-	AInventoryCapsulePowerActor* NewInventoryCapsulePower = GetWorld()->SpawnActor<AInventoryCapsulePowerActor>(AInventoryCapsulePowerActor::StaticClass());
-	/*CreatorCapsuleActor(CategoryCapsula);*/
 	if (NewInventoryCapsuleDamage)
 	{
 		//If the Spawn succeeds, set the Spawned inventory to the local one and log the success string
@@ -24,6 +54,11 @@ void AFactoryMethod::BeginPlay()
 		InventoryCapsuleDamage = NewInventoryCapsuleDamage;
 		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("%s has been created capsule Damage"), *InventoryCapsuleDamage->GetName()));
 	}
+}
+
+void AFactoryMethod::SpawnNewCapsulePower()
+{
+	AInventoryCapsulePowerActor* NewInventoryCapsulePower = GetWorld()->SpawnActor<AInventoryCapsulePowerActor>(AInventoryCapsulePowerActor::StaticClass());
 	if (NewInventoryCapsulePower)
 	{
 		//If the Spawn succeeds, set the Spawned inventory to the local one and log the success string
@@ -32,21 +67,6 @@ void AFactoryMethod::BeginPlay()
 		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("%s has been created capsule Power"), *InventoryCapsulePower->GetName()));
 	}
 }
-void AFactoryMethod::CreatorCapsuleActor(FString CategoryCapsule)
-{
-	/*if (CategoryCapsule.Equals("Damage")) {
-		GetWorld()->SpawnActor<AInventoryCapsuleActor>(AInventoryCapsuleActor::StaticClass());
-		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Creando capsule damage %s"), *InventoryCapsuleDamage->GetName()));
-	}
-	if (CategoryCapsule.Equals("Power")) {
-		GetWorld()->SpawnActor<AInventoryCapsuleActor>(AInventoryCapsuleActor::StaticClass());
-		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("Creando capsule damage %s"), *InventoryCapsulePower->GetName()));
-
-	}*/
-}
-
-
-// Called when the game starts or when spawned
 
 // Called every frame
 void AFactoryMethod::Tick(float DeltaTime)
