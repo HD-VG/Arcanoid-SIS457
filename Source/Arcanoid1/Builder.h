@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Brick.h"
+#include "Ship.h"
+#include "Proyectile.h"
 #include "Builder.generated.h"
 
 UCLASS()
@@ -26,4 +29,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	virtual ABrick* GetBrick();
+
+	virtual AProyectile* GetProyectil();
+
+	virtual AShip* GetShip();
 };

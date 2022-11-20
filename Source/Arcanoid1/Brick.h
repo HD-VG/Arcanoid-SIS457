@@ -15,6 +15,7 @@ public:
 	// Sets default values for this pawn's properties
 	ABrick();
 	FTimerHandle MemberTimerHandle;
+	FString BrickName;
 private:
 	uint32 bCanFire : 1;
 	FTimerHandle TimerHandle_ShotTimerExpired;

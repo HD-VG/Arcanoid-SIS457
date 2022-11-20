@@ -14,7 +14,9 @@ class ARCANOID1_API AProyectile : public APawn
 public:
 	// Sets default values for this pawn's properties
 	AProyectile();
-
+	UPROPERTY(Category = Mesh, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+		class UStaticMeshComponent* ProyectileMeshComponent;
+	FString ProyectileName;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

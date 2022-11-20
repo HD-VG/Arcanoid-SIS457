@@ -14,7 +14,9 @@ class ARCANOID1_API AShip : public APawn
 public:
 	// Sets default values for this pawn's properties
 	AShip();
-
+	UPROPERTY(Category = Mesh, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+		class UStaticMeshComponent* ShipMeshComponent;
+	FString ShipName;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -32,3 +32,22 @@ void ABuilder::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+ABrick* ABuilder::GetBrick()
+{
+	return nullptr;
+}
+
+AProyectile* ABuilder::GetProyectil()
+{
+	return nullptr;
+}
+
+AShip* ABuilder::GetShip()
+{
+	return nullptr;
+}
+
+
+
+
+

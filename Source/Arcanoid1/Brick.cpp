@@ -27,7 +27,7 @@ ABrick::ABrick()
 	SM_Brick->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);*/
 
 
-
+	BrickName = "Brick";
 }
 
 // Called when the game starts or when spawned

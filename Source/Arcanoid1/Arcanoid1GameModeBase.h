@@ -8,6 +8,7 @@
 #include "InventoryCapsuleActor.h"
 #include "InventoryCapsuleDamageActor.h"
 #include "InventoryCapsulePowerActor.h"
+#include "BuilderDirector.h"
 #include "Arcanoid1GameModeBase.generated.h"
 
 /**
@@ -37,6 +38,8 @@ private:
 	//UPROPERTY(VisibleAnywhere, Category = "Main")
 	//	class AArchitecturalEngineer* Engineer;
 
+	UPROPERTY()
+		class ABuilderDirector* BuilderDirector;
 	UPROPERTY()
 		class APaddle* Paddle;
 	UPROPERTY()

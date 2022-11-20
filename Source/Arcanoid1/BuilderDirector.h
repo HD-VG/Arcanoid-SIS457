@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Boss.h"
 #include "BuilderDirector.generated.h"
 
 UCLASS()
@@ -18,12 +19,20 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	UPROPERTY()
+		class ABoss* Boss;
 public:	
+	/*UPROPERTY()
+		interface IBuilderInterface* BuilderInterace;*/
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	/*virtual void GetBrick() ;
 
+	virtual void GetProyectil() ;
+
+	virtual void GetShip() ;*/
+	void CreatorBoss();
 };

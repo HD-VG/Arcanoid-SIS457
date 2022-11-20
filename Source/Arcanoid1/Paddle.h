@@ -18,7 +18,7 @@ public:
 		APaddle* Instance;
 
 	virtual void MoveHorizontal(float AxisValue);
-
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -12,7 +12,7 @@ void AArcanoid1GameModeBase::BeginPlay()
 	Super::BeginPlay();
 	SpawnBrick();
 	//patron singleton
-	for (int i = 0; i <= 4; i++)
+	for (int i = 0; i <= 2; i++)
 	{
 
 		APaddle* SpawnedPaddle = GetWorld()->SpawnActor<APaddle>(APaddle::StaticClass());
@@ -31,7 +31,14 @@ void AArcanoid1GameModeBase::BeginPlay()
 		FactoryMethod = NewFactoryMethod;
 		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT("%s has been created"), *FactoryMethod->GetName()));
 	}
-	
+	ABuilderDirector* NewBuilderDirector = GetWorld()->SpawnActor<ABuilderDirector>(ABuilderDirector::StaticClass());
+	if (NewBuilderDirector)
+	{
+		//If the Spawn succeeds, set the Spawned inventory to the local one and log the success string
+		//NewFactoryMethod->CreatorCapsuleActor("Damage");
+		BuilderDirector = NewBuilderDirector;
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, FString::Printf(TEXT("%s has been created"), *BuilderDirector->GetName()));
+	}
 	//
 
 	////Spawn Builder and Engineer

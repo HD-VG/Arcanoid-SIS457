@@ -22,4 +22,10 @@ class ARCANOID1_API IBuilderInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+	//funciones para mostrar mensajes de confirmacion de creacion de reina BOSS
+	virtual void GetBrick()=0;
+
+	virtual void GetProyectile()=0;
+
+	virtual void GetShip()=0;
 };
